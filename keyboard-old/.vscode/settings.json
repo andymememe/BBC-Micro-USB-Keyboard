@@ -1,0 +1,19 @@
+{
+    "files.associations": {
+        "**/.hlasmplugin/proc_grps.json": "jsonc",
+        "**/.hlasmplugin/pgm_conf.json": "jsonc",
+        ".fantomasignore": "ignore",
+        "*.pl": "perl",
+        "*.rmd": "markdown",
+        "pi-source.h": "c",
+        "pi-socket.h": "c",
+        "pi-macros.h": "c",
+        "pi-buffer.h": "c",
+        "pi-args.h": "c",
+        "pi-version.h": "c",
+        "pi-sockaddr.h": "c",
+        "unistd.h": "c",
+        "pi-error.h": "c",
+        "*.inc": "cpp"
+    }
+}
