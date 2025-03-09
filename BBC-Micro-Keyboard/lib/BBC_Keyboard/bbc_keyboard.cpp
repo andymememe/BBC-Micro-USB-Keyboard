@@ -83,6 +83,8 @@ void _BBCKeyboard::_init(void) {
 }
 
 void _BBCKeyboard::begin() {
+  _init();
+
   // setup the clock.
   // output: square wave (toggle mode)
   // freq: f_clk / (2 * (OCR1A + 1))
@@ -90,8 +92,6 @@ void _BBCKeyboard::begin() {
   TCCR1B = ((1 << WGM12) | (1 << CS10));  // CTC Mode, No Prescaler
   TIMSK1 = 0;                             // Disable Timer 1 Interrupt
   OCR1A = OCR1A_VAL;                      // 16M / (2 * ('7' + 1)) = 1MHz
-
-  _init();
 }
 
 void _BBCKeyboard::begin(int freqPin, int kbEnbPin, int wPin,
@@ -113,6 +113,8 @@ void _BBCKeyboard::begin(int freqPin, int kbEnbPin, int wPin,
   _ca2Pin = ca2Pin;
   _shiftLockLEDPin = shiftLockLEDPin;
   _capsLockLEDPin = capsLockLEDPin;
+  
+  _init();
 
   // setup the clock.
   // output: square wave (toggle mode)
@@ -121,8 +123,6 @@ void _BBCKeyboard::begin(int freqPin, int kbEnbPin, int wPin,
   TCCR1B = ((1 << WGM12) | (1 << CS10));  // CTC Mode, No Prescaler
   TIMSK1 = 0;                             // Disable Timer 1 Interrupt
   OCR1A = OCR1A_VAL;                      // 16M / (2 * ('7' + 1)) = 1MHz
-  
-  _init();
 }
 
 void _BBCKeyboard::loop(void) {
